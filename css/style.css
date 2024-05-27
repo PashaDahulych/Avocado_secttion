@@ -2894,7 +2894,7 @@ figure {
   width: 100%;
   z-index: 40;
   background-color: #fff;
-  margin-bottom: 0;
+  margin-bottom: 0!important;
   padding: .625rem 0;
   box-shadow: -.125rem -.125rem 0 0 #89d628;
   opacity: 0;
