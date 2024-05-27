@@ -5058,6 +5058,28 @@
         bubbleElement.style.left = `calc(${perc * 100}% + ${offset}px)`;
         bubbleElement.textContent = value;
     }
+    function showResModal() {
+        const btn = document.querySelector(".result-modal__button");
+        const resultList = document.querySelector(".result-modal__list");
+        btn.addEventListener("click", (function() {
+            resultList.classList.toggle("_show-list");
+            btn.classList.toggle("_show-list");
+        }));
+    }
+    window.onload = function() {
+        showResModal();
+    };
+    document.addEventListener("DOMContentLoaded", (function() {
+        const positionValueFixedBtn = 500;
+        window.addEventListener("scroll", (function() {
+            const headerYacht = document.querySelector(".header");
+            if (headerYacht) scrollY > positionValueFixedBtn ? headerYacht.classList.add("_scroll") : headerYacht.classList.remove("_scroll");
+            const fixedButton = document.querySelector(".result-modal");
+            if (fixedButton) scrollY > positionValueFixedBtn ? fixedButton.classList.add("_scroll") : fixedButton.classList.remove("_scroll");
+            const fixedButtonSecond = document.querySelector(".result-modal");
+            if (fixedButtonSecond) scrollY > positionValueFixedBtn ? fixedButtonSecond.classList.add("_scroll") : fixedButtonSecond.classList.remove("_scroll");
+        }));
+    }));
     window["FLS"] = true;
     menuInit();
     spollers();
