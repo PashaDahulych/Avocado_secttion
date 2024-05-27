@@ -2558,9 +2558,15 @@ figure {
   opacity: 1;
   visibility: visible
 }
+.result-modal__container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: space-between
+}
 .result-modal__body {
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: .625rem;
   line-height: 1
 }
 .result-modal__days {
@@ -2570,7 +2576,7 @@ figure {
   color: #262626
 }
 .result-modal__days:not(:last-child) {
-  margin-bottom: 1rem
+  margin-bottom: .375rem
 }
 .result-modal__program {
   color: #89d628
@@ -2587,13 +2593,14 @@ figure {
   min-width: fit-content
 }
 .result-modal__delivery {
-  position: relative
+  display: none
 }
 .result-modal__button {
   gap: .9375rem;
   align-items: center;
   flex-direction: row-reverse;
-  position: relative
+  position: relative;
+  width: 100%
 }
 .result-modal__button::before {
   font-size: .625rem;
@@ -2912,6 +2919,12 @@ figure {
     border: .0625rem solid #262626;
     box-shadow: .5rem .5rem 0 0 #262626
   }
+  .result-modal__body {
+    font-size: 1.125rem
+  }
+  .result-modal__days:not(:last-child) {
+    margin-bottom: .75rem
+  }
 }
 @media (min-width:61.99875em) {
   ._select-open .select_gender .select__title {
@@ -3128,6 +3141,11 @@ figure {
     margin-bottom: 1.5rem
   }
 }
+@media (min-width:520px) {
+  .result-modal__body {
+    font-size: .875rem
+  }
+}
 @media (min-width:767.98px) {
   .food__sec-btn {
     padding: 1.109375rem 1.25rem;
@@ -3141,16 +3159,16 @@ figure {
     border-bottom: .3125rem solid #89d628
   }
 }
+@media (min-width:800px) {
+  .result-modal__delivery {
+    display: block;
+    position: relative;
+    flex-grow: 1
+  }
+}
 @media (min-width:920px) {
   .result-modal {
     padding: 1.8125rem 0
-  }
-  .result-modal__container {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    justify-content: space-between;
-    flex-wrap: wrap
   }
 }
 @media (min-width:991.98px) {
@@ -3471,20 +3489,21 @@ figure {
   }
 }
 @media (max-width:920px) {
-  .footer {
-    margin-bottom: 9.25rem
-  }
-  .result-modal__container > *:not(:last-child) {
-    margin-bottom: 1rem
-  }
-  .result-modal__delivery {
-    flex: 1 1 50%
-  }
-  .result-modal__button {
-    width: 100%
+  .result-modal__container {
+    gap: 1rem
   }
   .result-modal__submit {
-    flex: 1 1 50%
+    flex: 0 1 50%
+  }
+}
+@media (max-width:919px) {
+  .footer {
+    margin-bottom: 4.9375rem
+  }
+}
+@media (max-width:800px) {
+  .result-modal__submit {
+    flex-grow: 1
   }
 }
 @media (max-width:360px) {
@@ -3713,6 +3732,10 @@ figure {
   .result-food__value span {
     font-size: 1.5625rem
   }
+  .result-modal__actions {
+    gap: 1rem;
+    flex: 0 1 70%
+  }
 }
 @media (max-width:47.99875em) {
   .button {
@@ -3812,7 +3835,7 @@ figure {
     font-size: 1rem
   }
   .footer {
-    margin-bottom: 13.5rem
+    margin-bottom: 3.625rem
   }
   .footer__logo {
     max-width: 2.875rem;
@@ -3968,11 +3991,15 @@ figure {
   .food__btn._tab-active {
     color: #89d628
   }
-  .result-modal__actions {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
-    flex-grow: 1
+  .result-modal__container {
+    gap: .625rem
+  }
+  .result-modal__body {
+    flex: 1 1 50%
+  }
+  .result-modal__submit {
+    padding: .75rem .3125rem;
+    font-size: .875rem
   }
 }
 @media (max-width:47.99875em) and (max-width:47.99875em) {
