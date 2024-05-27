@@ -5070,14 +5070,29 @@
         showResModal();
     };
     document.addEventListener("DOMContentLoaded", (function() {
-        const positionValueFixedBtn = 500;
+        const foodBlock = document.querySelector(".food");
         window.addEventListener("scroll", (function() {
             const headerYacht = document.querySelector(".header");
-            if (headerYacht) scrollY > positionValueFixedBtn ? headerYacht.classList.add("_scroll") : headerYacht.classList.remove("_scroll");
             const fixedButton = document.querySelector(".result-modal");
-            if (fixedButton) scrollY > positionValueFixedBtn ? fixedButton.classList.add("_scroll") : fixedButton.classList.remove("_scroll");
             const fixedButtonSecond = document.querySelector(".result-modal");
-            if (fixedButtonSecond) scrollY > positionValueFixedBtn ? fixedButtonSecond.classList.add("_scroll") : fixedButtonSecond.classList.remove("_scroll");
+            if (foodBlock) {
+                const foodBlockPosition = foodBlock.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (foodBlockPosition <= windowHeight && foodBlockPosition >= 0) {
+                    headerYacht?.classList.add("_scroll");
+                    fixedButton?.classList.add("_scroll");
+                    fixedButtonSecond?.classList.add("_scroll");
+                }
+                if (scrollY > foodBlock.offsetTop) {
+                    headerYacht?.classList.add("_scroll");
+                    fixedButton?.classList.add("_scroll");
+                    fixedButtonSecond?.classList.add("_scroll");
+                } else {
+                    headerYacht?.classList.remove("_scroll");
+                    fixedButton?.classList.remove("_scroll");
+                    fixedButtonSecond?.classList.remove("_scroll");
+                }
+            }
         }));
     }));
     window["FLS"] = true;

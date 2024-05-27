@@ -729,13 +729,13 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 62.5rem;
   padding: .5rem 1rem
 }
-.calculatot__title:not(:last-child) {
+.calculator__title:not(:last-child) {
   margin-bottom: .75rem
 }
-.calculatot__text:not(:last-child) {
+.calculator__text:not(:last-child) {
   margin-bottom: 1.5rem
 }
-.calculatot__form {
+.calculator__form {
   position: relative;
   overflow: hidden;
   border-radius: 1.25rem;
@@ -2724,13 +2724,13 @@ figure {
     font-size: 1rem;
     padding: .6875rem 1.75rem
   }
-  .calculatot__text {
+  .calculator__text {
     text-align: center
   }
-  .calculatot__text:not(:last-child) {
+  .calculator__text:not(:last-child) {
     margin-bottom: 2.625rem
   }
-  .calculatot__form {
+  .calculator__form {
     border-radius: 1.5625rem
   }
   .form__label {
@@ -3267,6 +3267,9 @@ figure {
   .sub-title {
     font-size: 1.5rem
   }
+  .calculator {
+    margin-bottom: 8.25rem
+  }
   .form {
     gap: 2.625rem
   }
@@ -3547,6 +3550,9 @@ figure {
   .menu__list:not(:last-child) {
     margin-bottom: 1rem
   }
+  .calculator {
+    margin-bottom: 5.125rem
+  }
   .form {
     gap: 1.5rem
   }
@@ -3794,10 +3800,10 @@ figure {
     flex: 0 0 2.625rem;
     width: 2.625rem
   }
-  .calculatot__container {
+  .calculator__container {
     padding: 0
   }
-  .calculatot__title {
+  .calculator__title {
     padding: 0 1rem
   }
   .form__column {
@@ -4003,7 +4009,7 @@ figure {
   }
 }
 @media (max-width:47.99875em) and (max-width:47.99875em) {
-  .calculatot__text {
+  .calculator__text {
     padding: 0 1rem
   }
 }
@@ -4222,6 +4228,16 @@ figure {
   }
 }
 @media (min-width:61.99875em) and (max-width:80em) {
+  @supports (margin-bottom:clamp(5.125rem ,-5.6379244497rem + 17.3599055621vw ,8.25rem)) {
+    .calculator {
+      margin-bottom: clamp(5.125rem ,-5.6379244497rem + 17.3599055621vw ,8.25rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(5.125rem ,-5.6379244497rem + 17.3599055621vw ,8.25rem)) {
+    .calculator {
+      margin-bottom: calc(5.125rem + 3.125 * (100vw - 61.99875rem)/ 18.00125)
+    }
+  }
   @supports (gap:clamp(1.5rem ,-2.3746528019rem + 6.2495660024vw ,2.625rem)) {
     .form {
       gap: clamp(1.5rem ,-2.3746528019rem + 6.2495660024vw ,2.625rem)
